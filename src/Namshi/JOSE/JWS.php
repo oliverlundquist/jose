@@ -111,7 +111,7 @@ class JWS extends JWT
      *
      * @throws \InvalidArgumentException
      */
-    public static function load($jwsTokenString, $allowUnsecure = false, Encoder $encoder = null, $encryptionEngine = 'OpenSSL')
+    public static function load($jwsTokenString, $allowUnsecure = false, ?Encoder $encoder = null, $encryptionEngine = 'OpenSSL')
     {
         if ($encoder === null) {
             $encoder = strpbrk($jwsTokenString, '+/=') ? new Base64Encoder() : new Base64UrlSafeEncoder();
